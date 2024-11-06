@@ -1,0 +1,29 @@
+- https://youtu.be/uSbDMs7Y9yI?si=2fcgTu2mbGhYEkL3
+- visitar pypi.org
+- instalar virtualenv  --> pip install virtualenv
+- crear el entorno virtual   --> virtualenv .envestudiante
+- Activar el entorno usar tab  -->    .\.envestudiante\Scripts\activate
+- Instalar Django --> pip install Django
+- si te lo pide   --> python.exe -m pip install --upgrade pip
+- ahora escribe   --> python   + import django
+- ahora escribe   --> django.__ version__
+- escribe exit() para salir
+- crear proyecto al final un espacio mas el punto
+- --> django-admin startproject backend_estudiante .
+- en setting backend_estudiante establecer idioma + nombre de la base de datos
+- crear la aplicacion --> python manage.py startapp estudiante_app
+- Ejecutar servidor --> python manage.py runserver
+- en setting backend_estudiante agregar la aplicacion, base datos, idioma
+- realizar cambios en urls backend y app +views
+- creamos la carpeta templates en la app + gestionarMateria.html
+- creamos el modelo segun la tabla, registramos el modelo
+- realizamos makemigrations y migrate
+- creamos el super usuario admin pass admin
+- ejecutamos el servidor escribimos 127.0.0.1:8000
+- se acede con admin admin
+- creamos un registro en la tabla Materia
+- creamos la carpeta static + subcarpetas css y js en la aplicacion con sus respectivos archivos
+- en templates creamos el archivo base.html
+- visitamos la pagina bootstrap 5 obtenemos link de css y js
+- en bootstrap obtenemos ejemplo de barra de navegacion simple
+-

@@ -1,0 +1,23 @@
+<table class="table table-responsive ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Creditos</th>
+        <th colspan="">opcions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for m in mismaterias %}
+         <tr>
+          <td> {{forloop.counter}}</td>
+          <td>{{m.codigo}}</td>
+          <td>{{m.nombre}}  </td>
+          <td>{{m.creditos}}  </td>
+           <td><a href="" class="btn btn-info" >Editar</a> </td>
+           <td><a href="" class="btn btn-danger" >borrar</a> </td>
+         </tr>
+        {% endfor %}
+    </tbody>
+  </table>

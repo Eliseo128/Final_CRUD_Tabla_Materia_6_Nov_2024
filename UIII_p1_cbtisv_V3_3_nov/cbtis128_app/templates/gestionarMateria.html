@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block titulo %} Crud las materias{% endblock %}
+
+{% block cuerpo %}
+<div class="row"><!-- fila renglon-->
+ <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!-- colomna izquiera-->
+    <h1>Registrar materia</h1>
+    <!-- la tajeta card-->
+    <div class="card">
+      <div class="card-body">
+       <form action="/registrarMateria/" method="POST">{% csrf_token %}
+         <div class="form-group">
+            <input type="text" class="form-control" id="txtcodigo" name="txtcodigo" placeholder="Codigo Materia" minlenght="6" maxLenght="6" required>
+          </div>
+          <div class="form-group py-3" >
+            <input type="text" class="form-control" id="txtnombre" name="txtnombre" placeholder="Nombre Materia"  maxLenght="100" required>
+          </div>
+          <div class="form-group py-1" >
+            <input type="text" class="form-control" id="numcreditos" name="numcreditos"
+            min="1" max="9" value="1" required>
+          </div>
+          <div class="form-group py-3" >
+            <button type="submit" class="btn btn-primary">Guardar</button>
+          </div>
+       </form>
+      </div>
+    </div>
+    <!-- la tajeta card-->
+ </div><!-- colomna izquiera-->
+
+ <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 "> <!-- colomna derecha-->
+  <h1>Listado de Materias</h1>
+  <!-- la tabla-->
+  <div class="table-responsive">
+    <table class="table table-striped ">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Codigo</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Creditos</th>
+          <th colspan="2">opcions</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for m in mismaterias %}
+           <tr>
+            <td> {{forloop.counter}}</td>
+            <td>{{m.codigo}}</td>
+            <td>{{m.nombre}}  </td>
+            <td>{{m.creditos}}  </td>
+             <td><a href="seleccionaMateria/{{m.codigo}}" class="btn btn-info" >Editar</a> </td>
+             <td><a href="borrarMateria/{{m.codigo}}" class="btn btn-danger" >borrar</a> </td>
+           </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+  <!-- la tabla-->
+</div><!-- colomna dercha-->
+
+</div> <!-- fila renglon-->
+
+{% endblock %}
